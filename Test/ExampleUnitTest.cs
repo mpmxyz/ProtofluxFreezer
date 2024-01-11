@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SampleMod
+namespace ProtofluxFreezer
 {
     [TestClass]
     public class ExampleUnitTest

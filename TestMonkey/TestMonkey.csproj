@@ -34,6 +34,6 @@
 		<Reference Include="MonkeyLoader">
 			<HintPath>$(ResonitePath)\MonkeyLoader.dll</HintPath>
 		</Reference>
-		<ProjectReference Include="..\SampleModMonkey.csproj" />
+		<ProjectReference Include="..\ProtofluxFreezerMonkey.csproj" />
 	</ItemGroup>
 </Project>

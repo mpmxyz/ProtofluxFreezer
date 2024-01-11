@@ -3,13 +3,13 @@ using MonkeyLoader.Configuration;
 using MonkeyLoader.Resonite;
 using System;
 
-namespace SampleMod
+namespace ProtofluxFreezer
 {
-    public class SampleModMonkey : ResoniteMonkey<SampleModMonkey>, ISampleMod
+    public class ProtofluxFreezerMonkey : ResoniteMonkey<ProtofluxFreezerMonkey>, IProtofluxFreezer
     {
-        public override string Name => "SampleMod";
+        public override string Name => "ProtofluxFreezer";
 
-        private SampleModMonkeyConfig LoadedConfig;
+        private ProtofluxFreezerMonkeyConfig LoadedConfig;
 
         public bool Enabled => LoadedConfig.Enabled.GetValue();
 
@@ -20,7 +20,7 @@ namespace SampleMod
 
         protected override bool OnEngineReady()
         {
-            LoadedConfig = Config.LoadSection<SampleModMonkeyConfig>();
+            LoadedConfig = Config.LoadSection<ProtofluxFreezerMonkeyConfig>();
             PatchesHarmony.Apply(this);
             return base.OnEngineReady();
         }
@@ -40,13 +40,13 @@ namespace SampleMod
             return base.OnShutdown();
         }
 
-        private class SampleModMonkeyConfig : ConfigSection
+        private class ProtofluxFreezerMonkeyConfig : ConfigSection
         {
             public DefiningConfigKey<bool> Enabled = new DefiningConfigKey<bool>("Enabled", "Enables a small message on each button click.", () => true);
 
             public override string Description => "MonkeyLoader flavor of sample mod's config";
 
-            public override string Name => "SampleMod";
+            public override string Name => "ProtofluxFreezer";
 
             public override Version Version => new Version(1, 0, 0);
         }

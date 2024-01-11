@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SampleMod
+namespace ProtofluxFreezer
 {
     [TestClass]
     public class UninitializedModTest
@@ -8,7 +8,7 @@ namespace SampleMod
         [TestMethod]
         public void TestModHasNonEmptyName()
         {
-            var mod = SampleModMonkey.Instance;
+            var mod = ProtofluxFreezerMonkey.Instance;
             Assert.IsNotNull(mod.Name);
             Assert.AreNotEqual("", mod.Name);
         }
