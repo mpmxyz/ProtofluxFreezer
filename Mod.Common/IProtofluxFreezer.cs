@@ -1,6 +1,6 @@
-﻿namespace SampleMod
+﻿namespace ProtofluxFreezer
 {
-    internal interface ISampleMod
+    internal interface IProtofluxFreezer
     {
         bool Enabled { get; }
 

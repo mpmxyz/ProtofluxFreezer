@@ -6,7 +6,7 @@
     <StartArguments>-Screen</StartArguments>
     <VariantSuffix>MonkeyLoader</VariantSuffix>
   </PropertyGroup>
-  <Import Project="./SampleMod.csproj" />
+  <Import Project="./ProtofluxFreezer.csproj" />
   <PropertyGroup>
 	<IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
