@@ -24,9 +24,9 @@ on:
       STEAM_TOKEN:
         required: true
 env:
-  ARTIFACT_NAME: "SampleMod"
-  ASSEMBLY_NAME: "mpmxyz.SampleMod.ResoniteModLoader"
-  PROJECT_FILE: "SampleModRML.csproj"
+  ARTIFACT_NAME: "ProtofluxFreezer"
+  ASSEMBLY_NAME: "mpmxyz.ProtofluxFreezer.ResoniteModLoader"
+  PROJECT_FILE: "ProtofluxFreezerRML.csproj"
   ResonitePath: "${{ github.workspace }}/Download/Resonite"
   PROJECT_URL: "${{ github.server_url }}/${{ github.repository }}"
   PROJECT_PATH: "${{ github.workspace }}/repo"
