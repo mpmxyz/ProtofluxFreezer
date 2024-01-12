@@ -26,7 +26,8 @@
     <Reference Include="MonkeyLoader">
       <HintPath>$(ResonitePath)\MonkeyLoader.dll</HintPath>
     </Reference>
-    <PackageReference Include="MonkeyLoader.GamePacks.Resonite" Version="1.0.1" />    
+    <PackageReference Include="MonkeyLoader.GamePacks.Resonite" Version="1.0.1" />
+    <PackageReference Include="mpmxyz.UIXDialogBuilder.MonkeyLoader" Version="0.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mod.Monkey"/>

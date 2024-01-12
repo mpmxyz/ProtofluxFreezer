@@ -16,6 +16,9 @@
 	</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="mpmxyz.UIXDialogBuilder.ResoniteModLoader">
+      <HintPath>$(ResonitePath)\rml_mods\mpmxyz.UIXDialogBuilder.ResoniteModLoader.dll</HintPath>
+    </Reference>
     <Reference Include="Harmony">
       <HintPath>$(ResonitePath)\rml_libs\0Harmony.dll</HintPath>
     </Reference>

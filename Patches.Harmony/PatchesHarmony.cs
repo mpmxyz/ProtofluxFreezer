@@ -1,5 +1,10 @@
-﻿using FrooxEngine.UIX;
+﻿using Elements.Core;
+using FrooxEngine;
+using FrooxEngine.UIX;
 using HarmonyLib;
+using ProtofluxFreezerRML.Mod.Common;
+using System;
+using UIXDialogBuilder;
 
 namespace ProtofluxFreezer
 {
@@ -10,25 +15,26 @@ namespace ProtofluxFreezer
         internal static void Apply(IProtofluxFreezer instance)
         {
             ModInstance = instance;
-            Harmony harmony = new Harmony("com.github.mpmxyz.ProtofluxFreezer"); //typically a reverse domain name is used here (https://en.wikipedia.org/wiki/Reverse_domain_name_notation)
-            harmony.PatchAll(); // do whatever LibHarmony patching you need, this will patch all [HarmonyPatch()] instances
+            Harmony harmony = new Harmony("com.github.mpmxyz.ProtofluxFreezer");
+            harmony.PatchAll();
         }
-        //Example of how a HarmonyPatch can be formatted
-        [HarmonyPatch(typeof(Button), "OnPressBegin")]
+
+#pragma warning disable IDE0051 // Remove unused private members
+        [HarmonyPatch(typeof(FrooxEngine.ProtoFlux.ProtoFluxTool), "GenerateMenuItems")]
         class ClassName_MethodName_Patch
         {
-            //Postfix() here will be automatically applied as a PostFix Patch
             [HarmonyPostfix]
-            static void Postfix(Button __instance, Canvas.InteractionData eventData)
+            static void Postfix(InteractionHandler tool, ContextMenu menu)
             {
                 if (!ModInstance.Enabled)
-                {//Use Config.GetValue() to use the ModConfigurationKey defined earlier
-                    return; //In this example if the mod is not enabled, we'll just return before doing anything
+                {
+                    return;
                 }
-                ModInstance.DoSomething();
-                FrooxEngineBootstrap.LogStream.Flush();
-                //Do stuff after everything in the original OnPressBegin has run.
+                var item = menu.AddItem("Freeze Protoflux", (Uri)null, colorX.Black);
+                item.Button.LocalPressed += (b, e) => new DialogBuilder<FreezeDialogState>()
+                    .BuildWindow("Freeze Configuration", menu.World, new FreezeDialogState());
             }
         }
+#pragma warning restore IDE0051 // Remove unused private members
     }
 }
