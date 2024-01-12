@@ -19,7 +19,7 @@ namespace ProtofluxFreezerRML.Mod.Common
         [DialogAction("Freeze nodes", isPrivate: false)]
         private void Execute()
         {
-            foreach(var child in nodeRoot.Children)
+            foreach (var child in nodeRoot.Children)
             {
                 if (!child.ParentReference.IsLinked)
                 {
@@ -66,7 +66,6 @@ namespace ProtofluxFreezerRML.Mod.Common
 
         public void Dispose()
         {
-            
         }
 
         public IDictionary<object, string> UpdateAndValidate(object key)
